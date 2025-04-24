@@ -14,7 +14,7 @@ import EditListing from './pages/EditListing'
 import ConfirmReservation from './pages/ConfirmReservation'
 import BookingPage from './pages/BookingPage'
 import useMediaQuery from "./hooks/useMediaQuery"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAirbnb } from '@fortawesome/free-brands-svg-icons'
 import { faPlaneDeparture, faUser } from '@fortawesome/free-solid-svg-icons'
 import Footer from './components/Footer'
@@ -90,10 +90,10 @@ function App(){
                             to={'/'}
                             className='flex flex-col items-center justify-center'
                         >
-                            <FontAwesomeIcon 
+                            {/* <FontAwesomeIcon 
                                 icon={faAirbnb} 
                                 style={{ color:'skyblue', height:'25px', width:'25px' }}
-                            />
+                            /> */}
                             <span className='text-xs'>Home</span>
                         </Link>
 
@@ -101,10 +101,10 @@ function App(){
                             to={'/account'}
                             className='flex flex-col items-center justify-center'
                         >
-                            <FontAwesomeIcon 
+                            {/* <FontAwesomeIcon 
                                 icon={faUser} 
                                 style={{ color:'skyblue', height:'25px', width:'25px' }}
-                            />
+                            /> */}
                             <span className='text-xs'>Profile</span>
                         </Link>
                     </div>
