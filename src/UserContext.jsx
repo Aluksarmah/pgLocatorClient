@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
     useEffect(() => {
         const getProfile = async() => {
             axios.get(
-                'http://localhost:5000/auth/getuser',
+                'https://pglocator-server.vercel.app/auth/getuser',
                 { withCredentials: true }
             )
             .then(res => setUserInfo(res.data))

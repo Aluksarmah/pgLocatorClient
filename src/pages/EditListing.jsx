@@ -41,7 +41,7 @@ function EditListing() {
     //api call to fetch listing info
     useEffect(() => {
         const getListingInfo = async() => {
-            axios.get(`http://localhost:5000/listings/available/${listingId}`)
+            axios.get(`https://pglocator-server.vercel.app/listings/available/${listingId}`)
             .then(res => { 
                 setSelectedListing(res.data)
                 setLoading(false)
@@ -64,7 +64,7 @@ function EditListing() {
     //function to handle adding images that were submiited through a link
     function addLinkImages(e){
         e.preventDefault()
-        axios.post("http://localhost:5000/listings/uploadimage-link",
+        axios.post("https://pglocator-server.vercel.app/listings/uploadimage-link",
             { imageLink }
         )
         .then(res => {
@@ -89,7 +89,7 @@ function EditListing() {
             data.append('images', images[i])
         }
 
-        axios.post("http://localhost:5000/listings/uploadimage-device", 
+        axios.post("https://pglocator-server.vercel.app/listings/uploadimage-device", 
             data,
             {
                 headers: { "Content-Type": "multipart/form-data" }
@@ -112,7 +112,7 @@ function EditListing() {
     }
 
     function submitData(data) {
-        axios.put(`http://localhost:5000/listings/edit/${listingId}`,
+        axios.put(`https://pglocator-server.vercel.app/listings/edit/${listingId}`,
             {
                 ownerId: userInfo._id,
                 data,
@@ -393,7 +393,7 @@ function EditListing() {
                         >
                             <img
                                 className="max-w-[300px] max-h-[300px] rounded-xl m-1"
-                                src={`http://localhost:5000/uploads/${photo}`}
+                                src={`https://pglocator-server.vercel.app/uploads/${photo}`}
                                 alt="uploaded image"
                             />
 

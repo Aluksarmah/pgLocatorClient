@@ -16,7 +16,7 @@ function Homepage() {
   useEffect(() => {
     const getListings = async () => {
       axios
-        .get("http://localhost:5000/listings/available")
+        .get("https://pglocator-server.vercel.app/listings/available")
         .then((res) => {
           setListings([...res.data]);
           setLoading(false);

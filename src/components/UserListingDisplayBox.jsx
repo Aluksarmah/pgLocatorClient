@@ -15,7 +15,7 @@ function UserListingDisplayBox({ userListing }) {
 
     //function for deleting listing
     function deleteListing(){
-        axios.delete(`http://localhost:5000/listings/delete/${_id}`)
+        axios.delete(`https://pglocator-server.vercel.app/listings/delete/${_id}`)
         .then(res => {
             if(res.status === 204){
                 window.location.assign('/account/rentals')
@@ -36,7 +36,7 @@ function UserListingDisplayBox({ userListing }) {
             >
                 <img 
                     className="w-28 h-28 rounded-lg mr-4"
-                    src={`http://localhost:5000/uploads/${photos[0]}`} 
+                    src={`https://pglocator-server.vercel.app/uploads/${photos[0]}`} 
                     alt={`${title}'s image`} 
                 />
 

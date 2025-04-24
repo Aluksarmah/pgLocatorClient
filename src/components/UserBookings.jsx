@@ -15,7 +15,7 @@ function UserBookings({ booking }) {
             {/* listing's cover image */}
             <img 
                 className="h-36 w-1/3 rounded-lg"
-                src={`http://localhost:5000/uploads/${listingId.photos[0]}`} 
+                src={`https://pglocator-server.vercel.app/uploads/${listingId.photos[0]}`} 
                 alt="booking cover image" 
             />
 

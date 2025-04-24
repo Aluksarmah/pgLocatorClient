@@ -10,7 +10,7 @@ function ListingDisplayBox({ id, image, title, location, price }) {
             {image &&
                 <img 
                     className="w-full h-4/5 rounded-lg" 
-                    src={`http://localhost:5000/uploads/${image}`} 
+                    src={`https://pglocator-server.vercel.app/uploads/${image}`} 
                     alt="listing cover image" 
                 />
             }   

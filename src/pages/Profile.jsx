@@ -21,7 +21,7 @@ function Profile() {
 
     //api calls for updating user settings
     async function updateName(data){
-        axios.put(`http://localhost:5000/settings/name`,
+        axios.put(`https://pglocator-server.vercel.app/settings/name`,
             { userId: userInfo._id, name: data.name },
             { withCredentials: true }
         )
@@ -36,7 +36,7 @@ function Profile() {
     }
 
     async function updateEmail(data){
-        axios.put(`http://localhost:5000/settings/email`,
+        axios.put(`https://pglocator-server.vercel.app/settings/email`,
             { userId: userInfo._id, email: data.email },
             { withCredentials: true }
         )
@@ -61,7 +61,7 @@ function Profile() {
         }
 
         //sending patch request to update post info on server
-        axios.put(`http://localhost:5000/settings/profilepic`,
+        axios.put(`https://pglocator-server.vercel.app/settings/profilepic`,
             formData,
             {
                 headers: { "Content-Type": "multipart/form-data" }
@@ -79,7 +79,7 @@ function Profile() {
     //function to logout user
     async function logout(){
         await axios.get(
-            'http://localhost:5000/auth/logout',
+            'https://pglocator-server.vercel.app/auth/logout',
             { withCredentials: true }
         )
         .then(res => {
@@ -228,7 +228,7 @@ function Profile() {
                                 ?
                                 (
                                     <img 
-                                        src={`http://localhost:5000/uploads/${userInfo.avatar}`} 
+                                        src={`https://pglocator-server.vercel.app/uploads/${userInfo.avatar}`} 
                                         alt="user profile picture" 
                                         className="w-48 h-48 rounded-lg ml-3 sm:ml-10"
                                     />

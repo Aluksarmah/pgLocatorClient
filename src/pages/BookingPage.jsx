@@ -15,7 +15,7 @@ function BookingPage() {
     //fetching booking info from backend
     useEffect(() => {
         const getBookingInfo = async() => {
-            axios.get(`http://localhost:5000/bookings/${bookingId}`)
+            axios.get(`https://pglocator-server.vercel.app/bookings/${bookingId}`)
             .then(res => {
                 setBooking(res.data)
                 //once data is loaded, remove loading animation
@@ -29,7 +29,7 @@ function BookingPage() {
     //function to cancel reservation
     async function deleteReservation(e){
         e.preventDefault()
-        axios.delete(`http://localhost:5000/bookings/${bookingId}`)
+        axios.delete(`https://pglocator-server.vercel.app/bookings/${bookingId}`)
         .then(res => {
             if(res.data = 'booking deleted'){
                 window.location.assign('/account/trips')
@@ -77,7 +77,7 @@ function BookingPage() {
                         >
                         
                             <img 
-                                src={`http://localhost:5000/uploads/${booking?.listingId?.photos?.[0]}`}
+                                src={`https://pglocator-server.vercel.app/uploads/${booking?.listingId?.photos?.[0]}`}
                                 alt={`${booking?.listingId?.title} cover image`} 
                                 className="h-48 rounded-lg"
                             />

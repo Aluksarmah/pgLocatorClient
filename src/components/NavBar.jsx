@@ -64,7 +64,7 @@ function NavBar() {
             {/* show user avatar if a user is logged in or if user doesn't have a profile pic/not logged in, display a default user icon */}
             {userInfo.avatar ? (
               <img
-                src={`http://localhost:5000/uploads/${userInfo.avatar}`}
+                src={`https://pglocator-server.vercel.app/uploads/${userInfo.avatar}`}
                 alt="user profile pic"
                 className="w-10 h-10 rounded-full ml-3"
               />

@@ -27,7 +27,7 @@ function ConfirmReservation() {
   useEffect(() => {
     const getListingInfo = async () => {
       await axios
-        .get(`http://localhost:5000/listings/available/${listingId}`)
+        .get(`https://pglocator-server.vercel.app/listings/available/${listingId}`)
         .then((res) => setListing(res.data))
         .catch((err) => console.log(err));
     };
@@ -38,7 +38,7 @@ function ConfirmReservation() {
   async function confirmBooking(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/bookings/new-booking", {
+      .post("https://pglocator-server.vercel.app/bookings/new-booking", {
         userId: userInfo._id,
         listingId,
         checkInDate,
@@ -126,7 +126,7 @@ function ConfirmReservation() {
               <div className="flex items-center gap-3 border-b-2 py-5">
                 <img
                   className="h-28 rounded-lg"
-                  src={`http://localhost:5000/uploads/${listing?.photos?.[0]}`}
+                  src={`https://pglocator-server.vercel.app/uploads/${listing?.photos?.[0]}`}
                   alt={`${listing.title} cover image`}
                 />
 

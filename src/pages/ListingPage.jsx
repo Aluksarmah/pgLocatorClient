@@ -25,7 +25,7 @@ function ListingPage() {
     //fetching listing data from api
     useEffect(() => {
         const getSelectedListing = async() => {
-            axios.get(`http://localhost:5000/listings/available/${listingId}`)
+            axios.get(`https://pglocator-server.vercel.app/listings/available/${listingId}`)
             .then(res => { 
                 setSelectedListing(res.data)
                 // Generate random rating between 1 and 5 (allowing half-star increments)
@@ -67,7 +67,7 @@ function ListingPage() {
                         {selectedListing?.photos?.length > 0 && selectedListing.photos.map(photo =>
                             <img 
                                 key={photo}
-                                src={`http://localhost:5000/uploads/${photo}`} 
+                                src={`https://pglocator-server.vercel.app/uploads/${photo}`} 
                                 alt="" 
                                 className="rounded-lg my-2"
                             />    
@@ -218,7 +218,7 @@ function ListingPage() {
                                 {/* main image on left hand side */}
                                 {selectedListing?.photos?.[0] && (
                                     <img 
-                                        src={`http://localhost:5000/uploads/${selectedListing.photos[0]}`} 
+                                        src={`https://pglocator-server.vercel.app/uploads/${selectedListing.photos[0]}`} 
                                         alt="main photo for listing" 
                                         className="aspect-square object-cover rounded-lg mr-3 w-full"
                                     />
@@ -230,14 +230,14 @@ function ListingPage() {
                                 >
                                     {selectedListing?.photos?.[1] && (
                                         <img 
-                                            src={`http://localhost:5000/uploads/${selectedListing.photos[1]}`} 
+                                            src={`https://pglocator-server.vercel.app/uploads/${selectedListing.photos[1]}`} 
                                             alt="second photo for listing" 
                                             className="aspect-square object-cover rounded-lg hidden sm:block"
                                         />
                                     )}
                                     {selectedListing?.photos?.[2] && (
                                     <img 
-                                        src={`http://localhost:5000/uploads/${selectedListing.photos[2]}`} 
+                                        src={`https://pglocator-server.vercel.app/uploads/${selectedListing.photos[2]}`} 
                                         alt="listing photo" 
                                         className="aspect-square object-cover rounded-lg hidden sm:block"
                                     />
@@ -271,7 +271,7 @@ function ListingPage() {
                                         {selectedListing?.owner?.avatar
                                             ?
                                             <img 
-                                                src={`http://localhost:5000/uploads/${selectedListing?.owner?.avatar}`} 
+                                                src={`https://pglocator-server.vercel.app/uploads/${selectedListing?.owner?.avatar}`} 
                                                 alt={`${selectedListing?.owner?.name}'s profile picture`}
                                                 className="w-14 h-14 rounded-full" 
                                             />
